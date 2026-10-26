@@ -65,7 +65,8 @@ class AppointmentController extends Controller
      */
     public function edit(Appointment $appointment)
     {
-        //
+        $appointment = Appointment::find(1);
+        $user = $appointment->user->name;
     }
 
     /**
