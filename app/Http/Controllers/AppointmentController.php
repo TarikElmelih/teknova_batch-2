@@ -73,7 +73,15 @@ class AppointmentController extends Controller
      */
     public function update(Request $request, Appointment $appointment)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'appointment_number' => 'required|string|max:255',
+            'appointment_time' => 'required|date',
+            'price' => 'required|numeric',
+            'phone_number' => 'required|string|max:255',
+            'user_id' => 'required|exists:users,id',
+        ]);
+        
     }
 
     /**
