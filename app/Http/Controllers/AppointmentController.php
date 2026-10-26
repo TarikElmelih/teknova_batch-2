@@ -38,20 +38,12 @@ class AppointmentController extends Controller
 
     public function update(Request $request, Appointment $appointment)
     {
-        $validated = $request->validate([
-            'name' => 'sometimes|required|string|max:255',
-            'appointment_number' => 'sometimes|required|string|max:255',
-            'appointment_time' => 'sometimes|required|date',
-            'price' => 'sometimes|required|numeric',
-            'phone_number' => 'sometimes|required|string|max:255',
-            'user_id' => 'sometimes|required|exists:users,id',
-        ]);
-
-        $appointment->update($validated);
-
-        return response()->json($appointment->refresh());
+        //
     }
 
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy(Appointment $appointment)
     {
         $appointment->delete();
