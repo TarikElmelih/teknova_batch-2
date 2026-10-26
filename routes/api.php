@@ -9,5 +9,6 @@ use App\Http\Controllers\AppointmentController;
 Route::apiResource('appointments', AppointmentController::class);
 Route::apiResource('users', UserController::class);
 Route::post('products', [ProductController::class, 'AddToCart']);
+Route::delete('products/{product}', [ProductController::class, 'RemoveFromCart']);
 
 require __DIR__.'/auth.php';
